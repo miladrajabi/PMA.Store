@@ -24,7 +24,6 @@
   <ItemGroup>
     <Folder Include="Categories\Repositories\" />
     <Folder Include="Customers\Repositories\" />
-    <Folder Include="Masters\Repositories\" />
     <Folder Include="Orders\Repositories\" />
     <Folder Include="Photos\Repositories\" />
   </ItemGroup>
