@@ -5,4 +5,29 @@
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PMA.Store_ApplicationServices\PMA.Store_ApplicationServices.csproj" />
+    <ProjectReference Include="..\PMA.Store_Core\PMA.Store_Domain.csproj" />
+    <ProjectReference Include="..\PMA.Store_Framework\PMA.Store_Framework.csproj" />
+    <ProjectReference Include="..\PMA.Store_Infrastructures\PMA.Store_Infrastructures.csproj" />
+    <ProjectReference Include="..\PMA.Store_Resources\PMA.Store_Resources.csproj" />
+    <ProjectReference Include="..\PMA.Store_UnitTest\PMA.Store_UnitTest.csproj" />
+  </ItemGroup>
+
 </Project>
