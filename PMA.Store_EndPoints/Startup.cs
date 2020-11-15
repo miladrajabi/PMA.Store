@@ -8,7 +8,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using PMA.Store_ApplicationServices.Masters.Commands;
+using PMA.Store_Domain.Masters.Commands;
 using PMA.Store_Domain.Masters.Repositories.Interface;
+using PMA.Store_Framework.Commands;
 using PMA.Store_Framework.Resources;
 using PMA.Store_Framework.Resources.Interface;
 using PMA.Store_Infrastructures;
@@ -41,8 +43,11 @@ namespace PMA.Store_EndPoints
 
             services.AddDbContextPool<StoreDbContext>(c => c.UseSqlServer(_configuration.GetConnectionString("PmaStoreCnn")));
             services.AddLocalization(opt => opt.ResourcesPath = "Resources");
+            services.AddAntiforgery();
+            services.AddTransient<CommandDispatcher>();
 
             services.AddTransient<IResourceManager, ResourceManager<SharedResource>>();
+            services.AddTransient<CommandHandler<AddMasterCommand>, AddMasterCommandHandler>();
 
             services.AddTransient<IMasterCommandRepository, MasterCommandRepository>();
             services.AddTransient<AddMasterCommandHandler>();

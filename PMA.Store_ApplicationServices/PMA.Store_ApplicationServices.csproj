@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\PMA.Store_Core\PMA.Store_Domain.csproj" />
     <ProjectReference Include="..\PMA.Store_Framework\PMA.Store_Framework.csproj" />
+    <ProjectReference Include="..\PMA.Store_Resources\PMA.Store_Resources.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,8 @@
-﻿namespace PMA.Store_Domain.Masters.Commands
+﻿using PMA.Store_Framework.Commands;
+
+namespace PMA.Store_Domain.Masters.Commands
 {
-    public class AddMasterCommand
+    public class AddMasterCommand : ICommand
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
