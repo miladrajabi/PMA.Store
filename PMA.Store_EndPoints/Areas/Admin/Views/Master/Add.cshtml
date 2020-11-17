@@ -6,13 +6,15 @@
     ViewData["Title"] = _ResourceManager[SharedResource.AddMaster];
 }
 <div class="row">
-    <div class="col-lg-12">
+    <div class="container py-4">
         <div class="card">
-            <h3>
-                <i class="fa fa-save">
-                    @_ResourceManager[SharedResource.AddMaster]
-                </i>
-            </h3>
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fa fa-save">
+                        @_ResourceManager[SharedResource.AddMaster]
+                    </i>
+                </h5>
+            </div>
         </div>
         <div class="card-body">
             <form enctype="multipart/form-data" asp-area="Admin" asp-controller="Master" asp-action="Add" method="post">
@@ -41,16 +43,22 @@
                     <textarea asp-for="Description"></textarea>
                     <span asp-validation-for="FirstName"></span>
                 </div>
-                <button type="submit" class="btn btn-primary">@_ResourceManager[SharedResource.Save]</button>
+                <button type="submit" class="btn  btn-outline-success">
+                    <span class="fa fa-save"></span>
+                    @_ResourceManager[SharedResource.Save]
+                </button>
+                <a class="btn btn-outline-danger" asp-action="Index" asp-area="Admin" asp-controller="Home">
+                    <span class="fa fa-backward"></span>
+                    @_ResourceManager[SharedResource.Return]
+                </a>
 
             </form>
         </div>
     </div>
 </div>
 
-@*@section Scripts
+@section Scripts
 {
-
-    <script src="~/lib/tinymce/jquery.tinymce.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>tinymce.init({ selector: 'textarea' });</script>
-}*@
+}

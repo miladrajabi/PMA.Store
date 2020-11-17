@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using PMA.Store_Domain.Masters.Commands;
+using PMA.Store_Domain.Masters.Entities;
+using PMA.Store_Domain.Masters.Queries;
 using PMA.Store_EndPoints.Models.Masters;
 using PMA.Store_Framework.Commands;
+using PMA.Store_Framework.Queries;
 using PMA.Store_Framework.Resources.Interface;
 using PMA.Store_Framework.Web;
 
@@ -14,14 +17,15 @@ namespace PMA.Store_EndPoints.Areas.Admin.Controllers
     [Area(nameof(Admin))]
     public class MasterController : BaseController
     {
-        private const string PhotoUrl = "wwwroot\\photos";
+        private const string PhotoUrl = "wwwroot//photos";
 
-        public MasterController(CommandDispatcher commandDispatcher, IResourceManager resourceManager) : base(resourceManager, commandDispatcher)
+        public MasterController(CommandDispatcher commandDispatcher, IResourceManager resourceManager, QueryDispatcher queryDispatcher) : base(resourceManager, commandDispatcher, queryDispatcher)
         {
         }
         public IActionResult Index()
         {
-            return View();
+            var allMaster = _queryDispatcher.Dispatch<List<Master>>(new AllMasterQuery());
+            return View(allMaster);
         }
         public IActionResult Add()
         {

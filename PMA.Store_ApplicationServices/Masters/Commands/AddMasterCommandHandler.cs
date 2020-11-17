@@ -39,7 +39,7 @@ namespace PMA.Store_ApplicationServices.Masters.Commands
         }
         private bool IsValid(AddMasterCommand command)
         {
-            bool isValid = true;
+            var isValid = true;
             if (string.IsNullOrEmpty(command.FirstName))
             {
                 AddError(SharedResource.Required, SharedResource.FirstName);
