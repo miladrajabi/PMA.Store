@@ -7,19 +7,30 @@ namespace PMA.Store_Infrastructures.Categories.Repositories
 {
     public class CategoryCommandRepository : ICategoryCommandRepository
     {
+        private readonly StoreDbContext _dbContext;
+
+        public CategoryCommandRepository(StoreDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         public void Add(Category category)
         {
-            throw new System.NotImplementedException();
+            _dbContext.Categories.Add(category);
         }
 
-        public Task AddAsync(Category category)
+        public async Task AddAsync(Category category)
         {
-            throw new System.NotImplementedException();
+            await _dbContext.Categories.AddAsync(category);
         }
 
-        public Task<int> SaveChangesAsync()
+        public async Task<int> SaveChangesAsync()
         {
-            throw new System.NotImplementedException();
+            return await _dbContext.SaveChangesAsync();
+        }
+        public int SaveChange()
+        {
+            return _dbContext.SaveChanges();
         }
     }
 }

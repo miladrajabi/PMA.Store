@@ -25,6 +25,10 @@
     {
       "library": "tinymce@5.5.1",
       "destination": "wwwroot/lib/tinymce/"
+    },
+    {
+      "library": "select2@4.0.13",
+      "destination": "wwwroot/lib/select2/"
     }
   ]
 }

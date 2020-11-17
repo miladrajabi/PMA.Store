@@ -9,6 +9,7 @@ namespace PMA.Store_Domain.Categories.Repositories.Interface
         void Add(Category category);
         Task AddAsync(Category category);
         Task<int> SaveChangesAsync();
+        int SaveChange();
 
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using PMA.Store_Domain.Masters.Commands;
 using PMA.Store_Domain.Masters.Entities;
 using PMA.Store_Domain.Masters.Queries;
-using PMA.Store_EndPoints.Models.Masters;
+using PMA.Store_EndPoints.Areas.Admin.Models.Masters;
 using PMA.Store_Framework.Commands;
 using PMA.Store_Framework.Queries;
 using PMA.Store_Framework.Resources.Interface;

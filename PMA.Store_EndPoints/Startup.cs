@@ -1,15 +1,19 @@
 using System.Collections.Generic;
-using System.Resources;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using PMA.Store_ApplicationServices.Categories.Commands;
+using PMA.Store_ApplicationServices.Categories.Queries;
 using PMA.Store_ApplicationServices.Masters.Commands;
 using PMA.Store_ApplicationServices.Masters.Queries;
+using PMA.Store_Domain.Categories.Commands;
+using PMA.Store_Domain.Categories.Entities;
+using PMA.Store_Domain.Categories.Queries;
+using PMA.Store_Domain.Categories.Repositories.Interface;
 using PMA.Store_Domain.Masters.Commands;
 using PMA.Store_Domain.Masters.Entities;
 using PMA.Store_Domain.Masters.Queries;
@@ -19,6 +23,7 @@ using PMA.Store_Framework.Queries;
 using PMA.Store_Framework.Resources;
 using PMA.Store_Framework.Resources.Interface;
 using PMA.Store_Infrastructures;
+using PMA.Store_Infrastructures.Categories.Repositories;
 using PMA.Store_Infrastructures.Masters.Repositories;
 using PMA.Store_Resources.Resources;
 
@@ -62,6 +67,13 @@ namespace PMA.Store_EndPoints
             services.AddTransient<IMasterQueryRepository, MasterQueryRepository>();
             services.AddTransient<IQueryHandler<AllMasterQuery, List<Master>>, AllMasterQueryHandler>();
 
+            services.AddTransient<ICategoryCommandRepository, CategoryCommandRepository>();
+            services.AddTransient<ICategoryQueryRepository, CategoryQueryRepository>();
+            services.AddTransient<CommandHandler<AddCategoryCommand>, AddCategoryCommandHandler>();
+            services.AddTransient<IQueryHandler<ParentCategoryQuery, List<Category>>, ParentCategoryQueryHandler>();
+            services.AddTransient<IQueryHandler<AllCategoryQuery, List<Category>>, AllCategoryQueryHandler>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -79,6 +91,9 @@ namespace PMA.Store_EndPoints
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseStatusCodePages();
+
+            app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseRouting();
             app.UseEndpoints(endpoints =>

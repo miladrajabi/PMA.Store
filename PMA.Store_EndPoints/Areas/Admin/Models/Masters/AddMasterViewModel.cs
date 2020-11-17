@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using PMA.Store_Resources.Resources;
 
-namespace PMA.Store_EndPoints.Models.Masters
+namespace PMA.Store_EndPoints.Areas.Admin.Models.Masters
 {
     public class AddMasterViewModel
     {
