@@ -91,11 +91,11 @@ namespace PMA.Store_EndPoints
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseStatusCodePages();
+            app.UseRouting();
 
             app.UseAuthorization();
             app.UseAuthentication();
 
-            app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

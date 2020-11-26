@@ -19,17 +19,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMA.Store_UnitTest", "PMA.S
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{6AABD23A-46BC-4287-A1C7-7B58121A5E13}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{A4B8EE20-4B93-4B5B-A869-A008617E875B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Core", "01. Core", "{A4B8EE20-4B93-4B5B-A869-A008617E875B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{0614216D-9871-43F9-8E15-C4BE5AE2BD27}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00. Framework", "00. Framework", "{0614216D-9871-43F9-8E15-C4BE5AE2BD27}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EndPoints", "EndPoints", "{3E2A871E-A921-4649-8B5C-8C8F70D1A80A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. EndPoints", "03. EndPoints", "{3E2A871E-A921-4649-8B5C-8C8F70D1A80A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructures", "Infrastructures", "{A21A78D5-9BD2-4F59-A39C-7D8CB85E8FEE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Infrastructures", "02. Infrastructures", "{A21A78D5-9BD2-4F59-A39C-7D8CB85E8FEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMA.Store_ApplicationServices", "PMA.Store_ApplicationServices\PMA.Store_ApplicationServices.csproj", "{404E6095-9320-4389-AC64-663A2458EDE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMA.Store_ApplicationServices", "PMA.Store_ApplicationServices\PMA.Store_ApplicationServices.csproj", "{404E6095-9320-4389-AC64-663A2458EDE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMA.Store_Resources", "PMA.Store_Resources\PMA.Store_Resources.csproj", "{570C6379-6FA8-48F0-BA96-313CB9C43220}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMA.Store_Resources", "PMA.Store_Resources\PMA.Store_Resources.csproj", "{570C6379-6FA8-48F0-BA96-313CB9C43220}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
